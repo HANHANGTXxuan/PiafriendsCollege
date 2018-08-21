@@ -13,7 +13,7 @@ public class PUserController {
     @Autowired
     private PLoginMapper userMapper;
 
-    @RequestMapping(path = "/resquest/getData",method = RequestMethod.POST)
+    @RequestMapping(path = "/request/getData",method = RequestMethod.POST)
     public PUser getData(long telephone,String password){
         PUser user = userMapper.getData(telephone,password);
         user.setPiaFuns(userMapper.follow(user.getPiaId()).size());
@@ -21,9 +21,8 @@ public class PUserController {
         return user;
     }
 
-    @RequestMapping(path = "/resquest/login",method = RequestMethod.POST)
+    @RequestMapping(path = "/request/login",method = RequestMethod.POST)
     public boolean login(long telephone,String password){
-        ;
         if (userMapper.login(telephone,password)){
             return true;
         }
