@@ -1,7 +1,7 @@
 package com.hanhangproject.demo.controller;
 
 import com.hanhangproject.demo.entity.PScript;
-import com.hanhangproject.demo.mapper.ScriptMapper.Upload.PUploadScript;
+import com.hanhangproject.demo.mapper.ScriptMapper.Manage.ManageScript;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,7 +14,7 @@ import java.util.Date;
 public class PScriptController {
 
     @Autowired
-    private PUploadScript uploadScript;
+    private ManageScript uploadScript;
 
     @RequestMapping(path = "/request/uploadScript",method = RequestMethod.POST)
     public boolean insert(Integer pia_user_id,char pia_release,String pia_simple_content,String pia_people_content,String pia_content_content){
@@ -30,5 +30,11 @@ public class PScriptController {
         script.setCreateAt(df.format(day));
         boolean b = uploadScript.insert(script);
         return b;
+    }
+
+    @RequestMapping(path = "/request/showScript",method = RequestMethod.POST)
+    public PScript showRoomScript(Integer id){
+        PScript script = uploadScript.showScript(id);
+        return script;
     }
 }
