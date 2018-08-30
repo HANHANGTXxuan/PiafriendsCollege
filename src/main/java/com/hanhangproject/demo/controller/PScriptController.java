@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class PScriptController {
@@ -35,6 +36,12 @@ public class PScriptController {
     @RequestMapping(path = "/request/showScript",method = RequestMethod.POST)
     public PScript showRoomScript(Integer id){
         PScript script = uploadScript.showScript(id);
+        return script;
+    }
+
+    @RequestMapping(path = "/request/showAllScript",method = RequestMethod.GET)
+    public List<PScript> showAllScript(){
+        List<PScript> script = uploadScript.showAllScript();
         return script;
     }
 }
