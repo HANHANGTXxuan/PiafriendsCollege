@@ -10,7 +10,16 @@ public class PScript {
     private char toexamined;
     private Integer browse;
     private String updatedAt;
-    private String createAt;
+    private String createdAt;
+    private PUser user;
+
+    public PUser getUser() {
+        return user;
+    }
+
+    public void setUser(PUser user) {
+        this.user = user;
+    }
 
     public String getUpdatedAt() {
         return updatedAt;
@@ -84,11 +93,11 @@ public class PScript {
         this.browse = browse;
     }
 
-    public String getCreateAt() {
-        return createAt;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreateAt(String createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

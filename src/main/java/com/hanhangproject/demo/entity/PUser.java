@@ -1,6 +1,7 @@
 package com.hanhangproject.demo.entity;
 
 public class PUser {
+
     private Integer piaId;
 
     private String piaTelephone;
